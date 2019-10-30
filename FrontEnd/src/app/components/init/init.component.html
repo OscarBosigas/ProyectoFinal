@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>IE Juan Bautista Maria Vianney</title>
+</head>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <form class="form-inline" method="post">
+        <input id="corr" maxlength="15" class="validanumericos form-control mr-sm-2" name="corr" type="tel"
+            placeholder="Usuario" required>
+        <input maxlength="20" class="form-control mr-sm-2" name="pass" type="password" placeholder="Contraseña"
+            required>
+        <input class="btn btn-success" name="Login" type="submit" value="Ingresar">
+        <input class="btn" type="submit" disabled="true" value=" ">
+        <input class="btn btn-danger" name="Olvido" value="¿Olvidó su contraseña?">
+    </form>
+</nav>
+
+<body style="background-color:#ba8300;">
+    <br>
+    <h1 align="center" background="##5cb85c">¡Bienvenidos!</h1>
+    <h4 align="center" background="##5cb85c">Institucion Educativa Juan Bautista Maria Vianney</h4>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm">
+                <img width="100%" height="80%" src="assets/entrada3.JPG">
+            </div>
+            <div class="col-sm">
+                <img width="100%" height="80%" src="assets/parque.JPG">
+            </div>
+            <div class="col-sm">
+                <img width="100%" height="80%" src="assets/escudo.jpg"> 
+            </div>
+        </div>
+    </div>
+</body>
+<nav class="navbar navbar-dark bg-dark mt-5 fixed-bottom">
+    <div class="navbar-expand m-auto navbar-text">
+
+        <button (click)="contacto()" class="btn btn-secondary">Contactenos</button>
+    </div>
+</nav>
+
+
+<script>
+    nload = function () {
+        var ele = document.querySelectorAll('.validanumericos')[0];
+        ele.onkeypress = function (e) {
+            if (isNaN(this.value + String.fromCharCode(e.charCode)))
+                return false;
+        }
+        ele.onpaste = function (e) {
+            e.preventDefault();
+        }
+    }
+</script>
+
+</html>
