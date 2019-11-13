@@ -1,12 +1,27 @@
 {
   "name": "server",
   "version": "1.0.0",
-  "description": "",
+  "description": "server proyecto final",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "author": "Oscar Bosigas",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "ejs": "^2.7.1",
+    "express": "^4.17.1",
+    "express-fileupload": "^1.1.6-alpha.6",
+    "express-list-endpoints": "^4.0.1",
+    "express-session": "^1.17.0",
+    "mysql": "^2.17.1",
+    "officegen": "^0.6.3",
+    "req-flash": "0.0.3",
+    "serve-favicon": "^2.5.0",
+    "session": "^0.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.4"
+  }
 }

@@ -8,6 +8,9 @@ import { Router } from '@angular/router';
 })
 export class InitComponent implements OnInit {
 
+  public email = '';
+  public password = '';
+
   constructor(private router: Router) { }
 
 
@@ -16,5 +19,12 @@ export class InitComponent implements OnInit {
 
   contacto() {
     this.router.navigate(['contact']);
+  }
+
+  onLogIn() {
+  }
+
+  restablecimiento() {
+    this.router.navigate(['']);
   }
 }
