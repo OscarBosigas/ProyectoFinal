@@ -13,14 +13,6 @@ app.get('/', function(req, res) {
     res.send('Hello World!');
 });
 
-var connection = mysql.createConnection({
-  host: "remotemysql.com",
-  user: "N2zzDc5rSI",
-  password: "HcAdCteir0",
-  database: "N2zzDc5rSI"
-});
-
-connection.connect();
 
 app.listen(port, function() {
     console.log('API server started on: ' + port);
