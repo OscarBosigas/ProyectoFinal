@@ -29,3 +29,6 @@ app.use((req, res, next) => {
     next();
 });
 
+var estudianteRoutes = require('./routes/estudianteRoutes.js');
+estudianteRoutes(app);
+

@@ -1,4 +1,4 @@
-'user strict';
+'use strict';
 var sql = require('../db');
 
 var Estudiante = function(estudiante){
@@ -9,15 +9,13 @@ var Estudiante = function(estudiante){
     this.contrasena = estudiante.contrasena;
 };
 
-Estudiante.createEstudiante = function createUser(estudiante, result) {
-    sql.query("INSERT INTO ESTUDIANTE set ?", estudiante, function(err, res){
+Estudiante.getEstudiantes = function getEstudiantes(result) {
+    sql.query("SELECT * FROM ESTUDIANTE", (err, rows, fields) => {
+        if (!err)
+            console.log(rows);
+        else
+            console.log(err);
+    })
+};
 
-        if (err) {
-            console.log("error: ", err);
-            result(err, null);
-        } else {
-            console.log(res.insertId);
-            result(null, res.insertId);
-        }
-    });
-}
+module.exports = Estudiante;
