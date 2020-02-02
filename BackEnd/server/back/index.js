@@ -32,3 +32,6 @@ app.use((req, res, next) => {
 var estudianteRoutes = require('./routes/estudianteRoutes.js');
 estudianteRoutes(app);
 
+var docenteRoutes = require('./routes/docenteRoutes');
+docenteRoutes(app);
+

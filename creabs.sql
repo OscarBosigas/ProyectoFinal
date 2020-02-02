@@ -33,7 +33,7 @@ create table DOCENTE
    DOC_DOCENTE          varchar(1024) not null,
    NOM_DOCENTE          varchar(1024) not null,
    APELLIDO_DOC         varchar(1024) not null,
-   COTRASENA_DOC        varchar(1024) not null,
+   CONTRASENA_DOC        varchar(1024) not null,
    primary key (DOC_DOCENTE)
 );
 
