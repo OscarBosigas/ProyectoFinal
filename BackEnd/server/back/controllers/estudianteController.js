@@ -6,7 +6,7 @@ exports.createEstudiante = function(req, res) {
     var new_Estudiante = new Estudiante(req.body);
     
     if (!new_Estudiante.doc || !new_Estudiante.nombre || !new_Estudiante.apellido
-        || !new_Estudiante.codigo || !new_Estudiante.contrasena) {
+        || !new_Estudiante.codigo || !new_Estudiante.contrasena || !new_Estudiante.cod_curso) {
 
             res.status(400).send({ error: true, message: "Falta informacion"});
     } else {

@@ -46,7 +46,8 @@ create table ESTUDIANTE
    NOMBRE               varchar(1024) not null,
    APELLIDO             varchar(1024) not null,
    CODIGO               numeric(8,0) not null,
-   CONTRASENA           varchar(1024) not null,
+   CONTRASENA           varchar(1024) not null,   
+   COD_CURSO            numeric(8,0) not null,
    primary key (DOC)
 );
 
@@ -56,6 +57,7 @@ create table ESTUDIANTE
 create table MATERIA
 (
    COD_MATERIA          numeric(8,0) not null,
+   COD_PERIODO          numeric(8,0) not null,
    COD_CURSO            numeric(8,0) not null,
    DOC_DOCENTE          varchar(1024) not null,
    NOM_MATERIA          varchar(20) not null,
@@ -69,7 +71,6 @@ create table MATERIA
 create table PERIDO
 (
    COD_PERIODO          numeric(8,0) not null,
-   COD_MATERIA          numeric(8,0),
    FECHA_INICIO         date not null,
    FECHA_FIN            date,
    primary key (COD_PERIODO)
@@ -79,7 +80,7 @@ create table NOTA
 (
 	VALOR				numeric (2,2) not null,
 	COD_MATERIA			numeric(8,0),
-	DOC 				varchar(1024),
+	DOC 				varchar(100),
 	primary key (COD_MATERIA, DOC)
 );
 
@@ -95,6 +96,9 @@ alter table MATERIA add constraint FK_RELATIONSHIP_2 foreign key (COD_CURSO)
 alter table MATERIA add constraint FK_RELATIONSHIP_7 foreign key (DOC_DOCENTE)
       references DOCENTE (DOC_DOCENTE) on delete restrict on update restrict;
 
-alter table PERIDO add constraint FK_RELATIONSHIP_6 foreign key (COD_MATERIA)
-      references MATERIA (COD_MATERIA) on delete restrict on update restrict;
+alter table MATERIA add constraint FK_RELATIONSHIP_6 foreign key (COD_PERIODO)
+      references PERIDO (COD_PERIODO) on delete restrict on update restrict;
+
+alter table ESTUDIANTE add constraint FK_RELATIONSHIP_5 foreign key (COD_CURSO)
+      references CURSO (COD_CURSO) on delete restrict on update restrict;
 

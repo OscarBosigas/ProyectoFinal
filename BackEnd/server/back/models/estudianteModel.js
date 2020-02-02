@@ -7,6 +7,7 @@ var Estudiante = function(estudiante){
     this.apellido = estudiante.apellido;
     this.codigo = estudiante.codigo;
     this.contrasena = estudiante.contrasena;
+    this.cod_curso = estudiante.cod_curso;
 };
 
 Estudiante.createEstudiante = function createEstudiante(estudiante, result) {
