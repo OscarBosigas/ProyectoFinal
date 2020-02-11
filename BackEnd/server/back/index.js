@@ -35,3 +35,6 @@ estudianteRoutes(app);
 var docenteRoutes = require('./routes/docenteRoutes');
 docenteRoutes(app);
 
+var logicaRoutes = require('./routes/logicaRoutes');
+logicaRoutes(app);
+
