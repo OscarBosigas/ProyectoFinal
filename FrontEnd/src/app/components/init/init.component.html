@@ -8,10 +8,10 @@
     <title>IE Juan Bautista Maria Vianney</title>
 </head>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <form class="form-inline" method="post">
-        <input id="corr" maxlength="15" class="validanumericos form-control mr-sm-2" name="corr" type="tel"
+    <form class="form-inline" (submit)="onLogIn()">
+        <input [(ngModel)]="usuario" id="usuario" maxlength="15" class="validanumericos form-control mr-sm-2" name="usuario" type="tel"
             placeholder="Usuario" required>
-        <input maxlength="20" class="form-control mr-sm-2" name="pass" type="password" placeholder="Contraseña"
+        <input [(ngModel)]="contrasena" maxlength="20" class="form-control mr-sm-2" name="contrasena" type="contrasena" placeholder="Contraseña"
             required>
         <input class="btn btn-success" name="Login" type="submit" value="Ingresar">
         <input class="btn" type="submit" disabled="true" value=" ">
@@ -23,6 +23,7 @@
     <br>
     <h1 align="center" background="##5cb85c">¡Bienvenidos!</h1>
     <h4 align="center" background="##5cb85c">Institucion Educativa Juan Bautista Maria Vianney</h4>
+    
     <div class="container-fluid">
         <div class="row">
             <div class="col-sm">

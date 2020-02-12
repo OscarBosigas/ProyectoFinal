@@ -6,6 +6,6 @@ exports.login = function (req, res) {
     Admin.login(req.params.usuario, function (err, admin) {
         if (err)
             res.send(err);
-        res.send(true);
+        res.send(admin);
     });
 };

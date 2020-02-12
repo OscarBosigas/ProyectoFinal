@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { LoginService } from '../../services/login.service';
 
 @Component({
   selector: 'app-init',
@@ -8,10 +9,10 @@ import { Router } from '@angular/router';
 })
 export class InitComponent implements OnInit {
 
-  public email = '';
-  public password = '';
+  public usuario = '';
+  public contrasena = '';
 
-  constructor(private router: Router) { }
+  constructor(private router: Router , private login: LoginService) { }
 
 
   ngOnInit() {
@@ -22,9 +23,17 @@ export class InitComponent implements OnInit {
   }
 
   onLogIn() {
+    this.login.getJson('http://localhost:3000/login/' + this.usuario).subscribe((res: any) => {
+      if (res.length > 0) {
+        this.router.navigate(['admin']);
+      } else {
+        alert('El usuario o la contraseña no coindicen con ninguna cuenta');
+      }
+    });
   }
 
   restablecimiento() {
     this.router.navigate(['']);
   }
+
 }
