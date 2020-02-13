@@ -13,6 +13,8 @@ import { EditarDocenteComponent } from './components/editar-docente/editar-docen
 import { EditarEstudianteComponent } from './components/editar-estudiante/editar-estudiante.component';
 import { EliminarDocenteComponent } from './components/eliminar-docente/eliminar-docente.component';
 import { EliminarEstudianteComponent } from './components/eliminar-estudiante/eliminar-estudiante.component';
+import { DocenteInitComponent } from './components/docente-init/docente-init.component';
+import { EstudianteInitComponent } from './components/estudiante-init/estudiante-init.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { EliminarEstudianteComponent } from './components/eliminar-estudiante/el
     EditarDocenteComponent,
     EditarEstudianteComponent,
     EliminarDocenteComponent,
-    EliminarEstudianteComponent
+    EliminarEstudianteComponent,
+    DocenteInitComponent,
+    EstudianteInitComponent
   ],
   imports: [
     BrowserModule,

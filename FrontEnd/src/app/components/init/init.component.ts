@@ -31,10 +31,10 @@ export class InitComponent implements OnInit {
         this.router.navigate(['admin']);
       }
       if (res[0].rol === 1) {
-        this.router.navigate(['agregarEstudiante']);
+        this.router.navigate(['estudianteInit']);
       }
       if (res[0].rol === 2) {
-        this.router.navigate(['agregarDocente']);
+        this.router.navigate(['docenteInit']);
       }
       } else {
         alert('El usuario o la contraseña no coindicen con ninguna cuenta');
