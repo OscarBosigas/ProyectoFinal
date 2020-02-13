@@ -11,4 +11,5 @@ module.exports = function (app) {
         .get(todoList.docente)
         .post(todoList.edit)
         .delete(todoList.remove);
+
 };

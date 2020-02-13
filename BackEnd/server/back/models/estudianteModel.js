@@ -8,6 +8,7 @@ var Estudiante = function(estudiante){
     this.codigo = estudiante.codigo;
     this.contrasena = estudiante.contrasena;
     this.cod_curso = estudiante.cod_curso;
+    this.rol = estudiante.rol;
 };
 
 Estudiante.createEstudiante = function createEstudiante(estudiante, result) {
