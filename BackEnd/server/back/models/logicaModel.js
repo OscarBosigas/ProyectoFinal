@@ -21,7 +21,7 @@ Admin.login = function login(usuario, contrasena1, result) {
                     result(err, null);
                 }
                 if (res1.length <= 0){
-                    sql.query("SELECT * FROM Admin WHERE contrasena = ?", usuario, (err, res2) => {
+                    sql.query("SELECT * FROM Admin WHERE usuario = ?", usuario, (err, res2) => {
                         if (err) {
                             console.log("error: ", err);
                             result(err, null);

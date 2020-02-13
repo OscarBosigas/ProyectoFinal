@@ -23,9 +23,19 @@ export class InitComponent implements OnInit {
   }
 
   onLogIn() {
-    this.login.getJson('http://localhost:3000/login/' + this.usuario).subscribe((res: any) => {
-      if (res.length > 0) {
+    this.login.getJson('http://localhost:3000/login/' + this.usuario + '/' + this.contrasena).subscribe((res: any) => {
+    if (res === null) {
+      alert('El usuario o la contraseña no coindicen con ninguna cuenta');
+    } else if (res.length > 0) {
+      if (res[0].rol === 3) {
         this.router.navigate(['admin']);
+      }
+      if (res[0].rol === 1) {
+        this.router.navigate(['agregarEstudiante']);
+      }
+      if (res[0].rol === 2) {
+        this.router.navigate(['agregarDocente']);
+      }
       } else {
         alert('El usuario o la contraseña no coindicen con ninguna cuenta');
       }
