@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { LoginService } from '../../services/login.service';
 
 @Component({
   selector: 'app-eliminar-estudiante',
@@ -8,7 +9,9 @@ import { Router } from '@angular/router';
 })
 export class EliminarEstudianteComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private login: LoginService) { }
+
+  docEstudiante: '';
 
   ngOnInit() {
   }
@@ -18,7 +21,10 @@ export class EliminarEstudianteComponent implements OnInit {
   }
 
   onDelete() {
-    this.router.navigate(['admin']);
+    this.login.deleteEstudiante('http://localhost:3000/estudiante/' + this.docEstudiante).subscribe(
+      data => {
+        this.router.navigate(['admin']);
+      });
   }
 
 }

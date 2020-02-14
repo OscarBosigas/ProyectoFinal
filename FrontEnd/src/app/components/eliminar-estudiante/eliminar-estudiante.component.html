@@ -15,18 +15,22 @@
 <div id="deleteEstudianteModal" >
     <div class="modal-dialog">
         <div class="modal-content">
-            <form>
+            <form (submit)="onDelete()">
                 <div class="modal-header">
-                    <h4 class="modal-title">Eliminar Estudiante</h4>
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">Eliminar Alumno</h4>
+                    <button (click)="onCancel()" type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+                <div class="form-group">
+                    <label>Documento</label>
+                    <input [(ngModel)]="docEstudiante" name="docEstudiante" class="form-control" required>
                 </div>
                 <div class="modal-body">
-                    <p>¿Está seguro de eliminar este estudiante?</p>
+                    <p>¿Está seguro de eliminar este alumno?</p>
                     <p class="text-warning"><small>Esta accion no tiene vuelta atras.</small></p>
                 </div>
                 <div class="modal-footer">
                     <input (click)="onCancel()" type="button" class="btn btn-default" data-dismiss="modal" value="Cancelar">
-                    <input (click)="onDelete()" type="submit" class="btn btn-danger" value="Eliminar">
+                    <input type="submit" class="btn btn-danger" value="Eliminar">
                 </div>
             </form>
         </div>

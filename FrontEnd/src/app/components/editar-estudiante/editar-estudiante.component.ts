@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Estudiante } from '../../model/estudiante';
+import { LoginService } from '../../services/login.service';
 
 @Component({
   selector: 'app-editar-estudiante',
@@ -8,7 +10,9 @@ import { Router } from '@angular/router';
 })
 export class EditarEstudianteComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private login: LoginService) { }
+
+  estudiante: Estudiante = new Estudiante();
 
   ngOnInit() {
   }
@@ -18,7 +22,11 @@ export class EditarEstudianteComponent implements OnInit {
   }
 
   onEdit() {
-    this.router.navigate(['admin']);
+    this.login.editEstudiate('http://localhost:3000/estudiante/' + this.estudiante.doc, this.estudiante).subscribe(
+      data => {
+        this.router.navigate(['admin']);
+      }
+    );
   }
 
 }

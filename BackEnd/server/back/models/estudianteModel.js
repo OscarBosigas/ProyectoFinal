@@ -8,7 +8,6 @@ var Estudiante = function(estudiante){
     this.codigo = estudiante.codigo;
     this.contrasena = estudiante.contrasena;
     this.cod_curso = estudiante.cod_curso;
-    this.rol = estudiante.rol;
 };
 
 Estudiante.createEstudiante = function createEstudiante(estudiante, result) {
@@ -18,7 +17,6 @@ Estudiante.createEstudiante = function createEstudiante(estudiante, result) {
             console.log("error: ", err);
             result(err, null);
         } else {
-            console.log(res.estudiante);
             result(null, res.estudiante);
         }
     });
@@ -31,7 +29,6 @@ Estudiante.getEstudiantes = function getEstudiantes(result) {
             result(null, err);
         }
         else{
-            console.log("Estudiantes: ", res);
             result(null, res);
         }
     })

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { LoginService } from '../../services/login.service';
+import { Estudiante } from '../../model/estudiante';
 
 @Component({
   selector: 'app-agregar-estudiante',
@@ -8,7 +10,9 @@ import { Router } from '@angular/router';
 })
 export class AgregarEstudianteComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private login: LoginService) { }
+
+  estudiante: Estudiante = new Estudiante();
 
   ngOnInit() {
   }
@@ -18,7 +22,11 @@ export class AgregarEstudianteComponent implements OnInit {
   }
 
   onAdd() {
-    this.router.navigate(['admin']);
+    this.login.addEstudiante('http://localhost:3000/estudiante', this.estudiante).subscribe(
+      data => {
+        this.router.navigate(['admin']);
+      }
+    );
   }
 
 }

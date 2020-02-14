@@ -15,7 +15,6 @@ Docente.createdocente = function createdocente(docente, result) {
             console.log("error: ", err);
             result(err, null);
         } else {
-            console.log(res.docente);
             result(null, res.docente);
         }
     });
@@ -28,7 +27,6 @@ Docente.getdocentes = function getdocentes(result) {
             result(null, err);
         }
         else {
-            console.log("docentes: ", res);
             result(null, res);
         }
     })

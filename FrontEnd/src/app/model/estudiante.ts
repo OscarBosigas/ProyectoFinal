@@ -1,7 +1,9 @@
-export class Estudiante{
-    DOC: string;
-    NOMBRE: string;
-    APELLIDO: string;
-    CODIGO: number;
+export class Estudiante {
+    doc: string;
+    nombre: string;
+    apellido: string;
+    codigo: number;
+    contrasena: string;
     NOM_CURSO: string;
+    cod_curso: number;
 }

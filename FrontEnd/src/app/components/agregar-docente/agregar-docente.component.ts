@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { Router } from '@angular/router';
+import { Docente } from '../../model/docente';
+import { LoginService } from '../../services/login.service';
 
 @Component({
   selector: 'app-agregar-docente',
@@ -8,17 +10,23 @@ import { Router } from '@angular/router';
 })
 export class AgregarDocenteComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private login: LoginService) { }
 
-  ngOnInit() {
+  docente: Docente = new Docente();
+
+ngOnInit() {
   }
 
-  onCancel(){
+onCancel() {
     this.router.navigate(['admin']);
   }
 
-  onAdd(){
-    this.router.navigate(['admin']);
-  }
+onAdd() {
+  this.login.addDocente('http://localhost:3000/docente', this.docente).subscribe(
+    data => {
+      this.router.navigate(['admin']);
+    }
+  );
+}
 
 }
