@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { LoginService } from '../../services/login.service';
+import { Docente } from '../../model/docente';
+import { Estudiante } from '../../model/estudiante';
 
 @Component({
   selector: 'app-admin',
@@ -8,9 +11,14 @@ import { Router } from '@angular/router';
 })
 export class AdminComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private login: LoginService) { }
+
+  docentes: Docente[];
+  estudiantes: Estudiante[];
 
   ngOnInit() {
+    this.login.getDocentes('http://localhost:3000/docente').subscribe(data => this.docentes = data);
+    this.login.getEstudiantes('http://localhost:3000/estudiante').subscribe(data => this.estudiantes = data);
   }
 
   onAgregarDocente() {

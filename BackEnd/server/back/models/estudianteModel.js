@@ -25,7 +25,7 @@ Estudiante.createEstudiante = function createEstudiante(estudiante, result) {
 };
 
 Estudiante.getEstudiantes = function getEstudiantes(result) {
-    sql.query("SELECT * FROM ESTUDIANTE", (err, res) => {
+    sql.query("SELECT DOC, NOMBRE, APELLIDO, CODIGO, NOM_CURSO FROM `ESTUDIANTE` e, `CURSO` c  WHERE e.COD_CURSO = c.COD_CURSO", (err, res) => {
         if (err){
             console.log("error:", err);
             result(null, err);
