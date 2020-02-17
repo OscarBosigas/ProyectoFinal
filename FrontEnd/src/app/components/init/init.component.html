@@ -9,9 +9,9 @@
 </head>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <form class="form-inline" (submit)="onLogIn()">
-        <input required [(ngModel)]="usuario" id="usuario" maxlength="15" class="validanumericos form-control mr-sm-2" name="usuario" type="tel"
+        <input required [(ngModel)]="usuario" id="usuario" maxlength="15" class="validanumericos form-control mr-sm-2" name="usuario" type="number"
             placeholder="Usuario" >
-        <input required [(ngModel)]="contrasena" maxlength="20" class="form-control mr-sm-2" name="contrasena" type="contrasena" placeholder="Contraseña"
+        <input required [(ngModel)]="contrasena" maxlength="20" class="form-control mr-sm-2" name="contrasena" type="password" placeholder="Contraseña"
             required>
         <input class="btn btn-success" name="Login" type="submit" value="Ingresar">
         <input class="btn" type="submit" disabled="true" value=" ">

@@ -38,3 +38,5 @@ docenteRoutes(app);
 var logicaRoutes = require('./routes/logicaRoutes');
 logicaRoutes(app);
 
+var materiaRoutes = require('./routes/materiaRoutes');
+materiaRoutes(app);

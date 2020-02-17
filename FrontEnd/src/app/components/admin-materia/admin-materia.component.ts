@@ -1,23 +1,19 @@
-import { Component, OnInit , Input} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { LoginService } from '../../services/login.service';
-import { Docente } from '../../model/docente';
-import { Materia } from '../../model/materia';
 
 @Component({
-  selector: 'app-docente-init',
-  templateUrl: './docente-init.component.html',
-  styleUrls: ['./docente-init.component.css']
+  selector: 'app-admin-materia',
+  templateUrl: './admin-materia.component.html',
+  styleUrls: ['./admin-materia.component.css']
 })
-export class DocenteInitComponent implements OnInit {
+export class AdminMateriaComponent implements OnInit {
 
   constructor(private router: Router, private login: LoginService) { }
 
-  docente: Docente = new Docente();
-  materias: Materia[];
-
-  docDocente = '';
+  docDocente = this.login.getUsuario2();
   Nombre = '';
+  NombreMateria = '';
 
   ngOnInit() {
     this.docDocente = this.login.getUsuario2();
@@ -28,19 +24,11 @@ export class DocenteInitComponent implements OnInit {
       this.Nombre = this.docente.nom_docente + ' ' + this.docente.apellido_doc;
     });
     this.login.getMateriasDocente('http://localhost:3000/materia/docente/' + this.docDocente)
-    .subscribe(data => this.materias = data);
+      .subscribe(data => this.materias = data);
   }
 
   onCerrar() {
-    this.router.navigate(['']);
-  }
-
-  onAdministrar() {
-    this.router.navigate(['adminMateria']);
-  }
-
-  onCalificar() {
-    this.router.navigate(['calificar']);
+    this.router.navigate(['docenteInit']);
   }
 
 }

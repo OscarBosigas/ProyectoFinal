@@ -11,6 +11,8 @@ import { EliminarDocenteComponent } from './components/eliminar-docente/eliminar
 import { EliminarEstudianteComponent } from './components/eliminar-estudiante/eliminar-estudiante.component';
 import { DocenteInitComponent } from './components/docente-init/docente-init.component';
 import { EstudianteInitComponent } from './components/estudiante-init/estudiante-init.component';
+import { AdminMateriaComponent } from './components/admin-materia/admin-materia.component';
+import { CalificarComponent } from './components/calificar/calificar.component';
 
 
 const routes: Routes = [
@@ -24,7 +26,9 @@ const routes: Routes = [
   { path: 'eliminarDocente', component: EliminarDocenteComponent },
   { path: 'eliminarEstudiante', component: EliminarEstudianteComponent},
   { path: 'docenteInit', component: DocenteInitComponent },
-  { path: 'estudianteInit', component: EstudianteInitComponent }
+  { path: 'estudianteInit', component: EstudianteInitComponent },
+  { path: 'adminMateria', component: AdminMateriaComponent },
+  { path: 'calificar', component: CalificarComponent }
 
 ];
 

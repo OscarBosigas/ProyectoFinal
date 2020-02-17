@@ -40,10 +40,6 @@ Admin.login = function login(usuario, contrasena1, result) {
             result(null, res);
         }
     });            
-            
-    
-
-    
 
 };
 module.exports = Admin;

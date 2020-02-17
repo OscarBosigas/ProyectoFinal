@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ɵConsole } from '@angular/core';
 import { Router } from '@angular/router';
 import { LoginService } from '../../services/login.service';
 
@@ -30,9 +30,11 @@ export class InitComponent implements OnInit {
         this.router.navigate(['admin']);
       }
       if (res[0].rol === 1) {
+        this.login.getUsuario(res[0].DOC);
         this.router.navigate(['estudianteInit']);
       }
       if (res[0].rol === 2) {
+        this.login.getUsuario(res[0].DOC_DOCENTE);
         this.router.navigate(['docenteInit']);
       }
       } else {

@@ -15,6 +15,8 @@ import { EliminarDocenteComponent } from './components/eliminar-docente/eliminar
 import { EliminarEstudianteComponent } from './components/eliminar-estudiante/eliminar-estudiante.component';
 import { DocenteInitComponent } from './components/docente-init/docente-init.component';
 import { EstudianteInitComponent } from './components/estudiante-init/estudiante-init.component';
+import { AdminMateriaComponent } from './components/admin-materia/admin-materia.component';
+import { CalificarComponent } from './components/calificar/calificar.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,9 @@ import { EstudianteInitComponent } from './components/estudiante-init/estudiante
     EliminarDocenteComponent,
     EliminarEstudianteComponent,
     DocenteInitComponent,
-    EstudianteInitComponent
+    EstudianteInitComponent,
+    AdminMateriaComponent,
+    CalificarComponent
   ],
   imports: [
     BrowserModule,

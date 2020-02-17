@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Docente } from '../model/docente';
 import { Observable } from 'rxjs';
 import { Estudiante } from '../model/estudiante';
+import { Materia } from '../model/materia';
 
 @Injectable({
   providedIn: 'root'
@@ -11,12 +12,26 @@ export class LoginService {
 
   constructor( private http: HttpClient) {}
 
+  usuario: string;
+
+  getUsuario(user: string) {
+    this.usuario = user;
+  }
+
+  getUsuario2() {
+    return this.usuario;
+  }
+
   getJson(url: string) {
     return this.http.get(url);
   }
 
   getDocentes(url: string): Observable<Docente[]> {
     return this.http.get<Docente[]>(url);
+  }
+
+  getADocente(url: string): Observable<Docente> {
+    return this.http.get<Docente>(url);
   }
 
   getEstudiantes(url: string): Observable<Estudiante[]> {
@@ -45,5 +60,9 @@ export class LoginService {
 
   deleteDocente(url: string) {
     return this.http.delete<Docente>(url);
+  }
+
+  getMateriasDocente(url: string): Observable<Materia[]> {
+    return this.http.get<Materia[]>(url);
   }
 }

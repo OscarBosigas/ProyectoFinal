@@ -1,5 +1,6 @@
 'user strict';
 var sql = require('../db');
+var materia = require('./materiaModel');
 
 var Docente= function (docente) {
     this.doc_docente = docente.doc_docente;

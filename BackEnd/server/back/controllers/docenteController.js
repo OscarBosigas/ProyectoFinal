@@ -48,6 +48,6 @@ exports.remove = function (req, res) {
     Docente.remove(req.params.doc_docente, function (err, docente) {
         if (err)
             res.send(err);
-        res.json({ message: "docente eliminado" });
+        res.json(docente);
     });
 };
