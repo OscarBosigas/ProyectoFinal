@@ -9,4 +9,10 @@ module.exports = function (app) {
     app.route('/materia/curso/:cod_curso')
         .get(todoList.getMateriasCurso);
 
+    app.route('/materia/:cod_materia')
+        .get(todoList.getMateria);
+
+    app.route('/materia/estructura/:cod_materia')
+        .get(todoList.getEstructura);
+
 }

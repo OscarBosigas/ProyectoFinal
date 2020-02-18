@@ -14,10 +14,14 @@ export class DocenteInitComponent implements OnInit {
   constructor(private router: Router, private login: LoginService) { }
 
   docente: Docente = new Docente();
+  materia: Materia = new Materia();
+
   materias: Materia[];
 
   docDocente = '';
   Nombre = '';
+
+  nombreMateria: string;
 
   ngOnInit() {
     this.docDocente = this.login.getUsuario2();
@@ -35,7 +39,8 @@ export class DocenteInitComponent implements OnInit {
     this.router.navigate(['']);
   }
 
-  onAdministrar() {
+  onAdministrar(mat: number) {
+    this.login.getMateria(mat);
     this.router.navigate(['adminMateria']);
   }
 

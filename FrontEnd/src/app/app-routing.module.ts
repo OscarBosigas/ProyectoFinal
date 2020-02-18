@@ -13,6 +13,8 @@ import { DocenteInitComponent } from './components/docente-init/docente-init.com
 import { EstudianteInitComponent } from './components/estudiante-init/estudiante-init.component';
 import { AdminMateriaComponent } from './components/admin-materia/admin-materia.component';
 import { CalificarComponent } from './components/calificar/calificar.component';
+import { EditMateriaComponent } from './components/edit-materia/edit-materia.component';
+import { AgregarMateriaComponent } from './components/agregar-materia/agregar-materia.component';
 
 
 const routes: Routes = [
@@ -28,7 +30,9 @@ const routes: Routes = [
   { path: 'docenteInit', component: DocenteInitComponent },
   { path: 'estudianteInit', component: EstudianteInitComponent },
   { path: 'adminMateria', component: AdminMateriaComponent },
-  { path: 'calificar', component: CalificarComponent }
+  { path: 'calificar', component: CalificarComponent },
+  { path: 'editMateria', component: EditMateriaComponent },
+  { path: 'agregarMateria', component: AgregarMateriaComponent }
 
 ];
 

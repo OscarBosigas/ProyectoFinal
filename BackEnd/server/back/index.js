@@ -40,3 +40,6 @@ logicaRoutes(app);
 
 var materiaRoutes = require('./routes/materiaRoutes');
 materiaRoutes(app);
+
+var estructuraRoutes = require('./routes/estructuraRoutes');
+estructuraRoutes(app);
