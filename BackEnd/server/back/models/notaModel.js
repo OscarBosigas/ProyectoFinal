@@ -42,4 +42,15 @@ Nota.getNota = function getNota(cod_materia, cod,  result) {
     });
 };
 
+Nota.getNotasCurso = function(doc, result) {
+    sql.query("SELECT valor FROM NOTA n, ESTUDIANTE e WHERE n.doc = e.doc and e.doc = ?", doc, (err, res) => {
+            if (err) {
+                console.log("error: ", err);
+                result(err, null);
+            }
+            else
+                result(null, res);
+        });
+}
+
 module.exports = Nota;

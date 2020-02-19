@@ -85,6 +85,10 @@ export class LoginService {
     return this.http.get<Estudiante[]>(url);
   }
 
+  getAEstudiante(url: string): Observable<Estudiante> {
+    return this.http.get<Estudiante>(url);
+  }
+
   addEstudiante(url: string, estudiante: Estudiante): Observable<Estudiante> {
     return this.http.post<Estudiante>(url, estudiante);
   }
@@ -155,6 +159,10 @@ export class LoginService {
 
   editCalificacion(url: string, nota: Nota) {
     return this.http.post(url, nota);
+  }
+
+  getCalificacionesCurso(url: string): Observable<Nota[]> {
+    return this.http.get<Nota[]>(url);
   }
 
 }

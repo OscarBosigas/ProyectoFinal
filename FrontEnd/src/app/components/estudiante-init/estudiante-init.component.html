@@ -31,19 +31,18 @@
                         <th>Nombre</th>
                         <th>Curso</th>
                         <th>Horas</th>
-                        <th>Valor</th>
+                        <th>Periodo</th>
                         <th></th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr *ngFor="let data of materias">
-                        <td>{{data.nom_materia}}</td>
-                        <td>{{data.cod_curso}}</td>
-                        <td>{{data.num_horas}}</td>
-                        <td>{{data.valor}}</td>
+                        <td>{{data.NOM_MATERIA}}</td>
+                        <td>{{data.NOM_CURSO}}</td>
+                        <td>{{data.NUM_HORAS}}</td>
+                        <td>{{data.COD_PERIODO}}</td>
                         <td>
-                            <button 
-                                class="btn btn-danger btn-sm btn-center">Especificacion</button>
+                            <button class="btn btn-danger btn-sm btn-center">Calificacion</button>
                         </td>
                     </tr>
                 </tbody>
@@ -51,6 +50,16 @@
         </div>
     </div>
 
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                Promedio acumulado
+            </div>
+            <div class="col">
+               <p>{{Promedio}}</p>
+            </div>
+        </div>
+    </div>
 </body>
 
 <script>

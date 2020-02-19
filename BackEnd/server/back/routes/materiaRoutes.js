@@ -6,7 +6,7 @@ module.exports = function (app) {
     app.route('/materia/docente/:doc_docente')
         .get(todoList.getMateriasDocente);
 
-    app.route('/materia/:doc/:cod_curso')
+    app.route('/materia/:cod_curso')
         .get(todoList.getMateriasCurso);
 
     app.route('/materia/:cod_materia')

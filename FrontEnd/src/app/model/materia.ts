@@ -6,4 +6,5 @@ export class Materia {
     nom_materia: string;
     num_horas: number;
     valor: number;
+    NOM_CURSO: string;
 }

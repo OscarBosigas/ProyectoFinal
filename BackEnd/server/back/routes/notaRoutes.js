@@ -6,6 +6,9 @@ module.exports = function (app) {
     app.route('/nota')
         .post(todoList.calificar);
 
+    app.route('/nota/estudiante/:doc')
+        .get(todoList.getNotasCurso);
+
 
     app.route('/nota/:cod_materia/:cod')
         .get(todoList.getNota);

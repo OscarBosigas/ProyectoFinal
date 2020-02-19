@@ -11,7 +11,7 @@ exports.getMateriasDocente = function (req, res) {
 };
 
 exports.getMateriasCurso = function (req, res) {
-    Materia.getMateriasCurso(req.params.doc, req.params.cod_curso, function (err, materia) {
+    Materia.getMateriasCurso(req.params.cod_curso, function (err, materia) {
         if (err)
             res.send(err);
         res.json(materia);

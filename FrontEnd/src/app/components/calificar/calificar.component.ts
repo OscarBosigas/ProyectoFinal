@@ -52,7 +52,6 @@ export class CalificarComponent implements OnInit {
     this.login.getNota('http://localhost:3000/nota/' +
         this.login.getMateria2() + '/' + doc).subscribe(res => {
           x = res[0];
-          console.log(x);
           if (x !== undefined) {
             alert('El estudiante ya cuenta con nota en esta asignatura, se editara si continua');
             this.router.navigate(['editarCal']);

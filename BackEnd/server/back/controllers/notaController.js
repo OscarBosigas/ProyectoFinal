@@ -32,5 +32,12 @@ exports.getNota = function(req, res) {
             res.send(err);
         res.send(nota);
     });
-    
 };
+
+exports.getNotasCurso = function(req, res) {
+    Nota.getNotasCurso(req.params.doc, function (err, nota) {
+        if (err)
+            res.send(err);
+        res.send(nota);
+    });
+}
