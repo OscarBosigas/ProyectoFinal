@@ -20,6 +20,15 @@ export class LoginService {
   cod: string;
   doc1: string;
   curso = 0;
+  codAlumno = 0;
+
+  getAlumnoCod(cod: number) {
+    this.codAlumno = cod;
+  }
+
+  getAlumnoCod2() {
+    return this.codAlumno;
+  }
 
   getCurso(curso: number) {
     this.curso = curso;
@@ -163,6 +172,10 @@ export class LoginService {
 
   getCalificacionesCurso(url: string): Observable<Nota[]> {
     return this.http.get<Nota[]>(url);
+  }
+
+  getAMateria(url: string): Observable<Materia> {
+    return this.http.get<Materia>(url);
   }
 
 }

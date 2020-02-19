@@ -17,6 +17,7 @@ import { EditMateriaComponent } from './components/edit-materia/edit-materia.com
 import { AgregarMateriaComponent } from './components/agregar-materia/agregar-materia.component';
 import { CalificarEstudianteComponent } from './components/calificar-estudiante/calificar-estudiante.component';
 import { EditarCalificacionComponent } from './components/editar-calificacion/editar-calificacion.component';
+import { EstadisticaComponent } from './components/estadistica/estadistica.component';
 
 
 const routes: Routes = [
@@ -36,7 +37,8 @@ const routes: Routes = [
   { path: 'editMateria', component: EditMateriaComponent },
   { path: 'agregarMateria', component: AgregarMateriaComponent },
   { path: 'calificarEstudiante', component: CalificarEstudianteComponent },
-  { path: 'editarCal', component: EditarCalificacionComponent }
+  { path: 'editarCal', component: EditarCalificacionComponent },
+  { path: 'estadistica', component: EstadisticaComponent }
 
 ];
 

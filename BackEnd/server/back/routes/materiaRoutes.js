@@ -9,7 +9,7 @@ module.exports = function (app) {
     app.route('/materia/:cod_curso')
         .get(todoList.getMateriasCurso);
 
-    app.route('/materia/:cod_materia')
+    app.route('/materia/materia/:cod_materia')
         .get(todoList.getMateria);
 
 }

@@ -13,8 +13,14 @@
 
 <body>
     <div class="bg-info clearfix p-3 mb-2 bg-dark text-white">
-        <h4 align="center" background="##5cb85c">Editar {{ Nombre }}</h4>
-        <a class="btn btn-warning float-right" (click)="onCerrar()">Cerrar</a>
+        <div class="row">
+            <div class="col">
+                <h4 align="center" background="##5cb85c">Editar {{ Nombre }}</h4>
+            </div>
+            <div class="col">
+                <a class="btn btn-warning float-right" (click)="onCerrar()">Cerrar</a>
+            </div>
+        </div>
     </div>
     <div class="container">
         <div class="table-wrapper">

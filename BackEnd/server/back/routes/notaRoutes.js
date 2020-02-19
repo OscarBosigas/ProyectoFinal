@@ -9,8 +9,7 @@ module.exports = function (app) {
     app.route('/nota/estudiante/:doc')
         .get(todoList.getNotasCurso);
 
-
-    app.route('/nota/:cod_materia/:cod')
+    app.route('/nota/codigo/:cod_materia/:cod')
         .get(todoList.getNota);
 
     app.route('/nota/:cod_materia/:doc')

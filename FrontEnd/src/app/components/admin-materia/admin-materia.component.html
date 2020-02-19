@@ -13,9 +13,15 @@
 
 <body>
     <div class="bg-info clearfix p-3 mb-2 bg-dark text-white">
-        <h2 align="center" background="##5cb85c">{{ Nombre }}</h2>
-        <h4 align="center" background="##5cb85c">{{ NombreMateria }}</h4>
-            <a class="btn btn-warning float-right" (click)="onCerrar()">Volver</a>
+        <div class="row">
+            <div class="col">
+                <h4 align="center" background="##5cb85c">{{ Nombre }}</h4>
+                <h4 align="center" background="##5cb85c">{{ NombreMateria }}</h4>
+            </div>
+            <div class="col">
+                <a class="btn btn-warning float-right" (click)="onCerrar()">Volver</a>
+            </div>
+        </div>
     </div>
     <div class="container">
         <div class="table-wrapper">

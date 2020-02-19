@@ -39,7 +39,8 @@ export class AdminMateriaComponent implements OnInit {
       this.Nombre = this.docente.nom_docente + ' ' + this.docente.apellido_doc;
     });
     this.idMateria = this.login.getMateria2();
-    this.login.getMateriaById('http://localhost:3000/materia/' + this.idMateria).subscribe((res: any) => {
+    this.login.getMateriaById('http://localhost:3000/materia/materia/' + this.idMateria).subscribe((res: any) => {
+      console.log(this.idMateria);
       this.materia.cod_materia = res[0].COD_MATERIA;
       this.materia.nom_materia = res[0].NOM_MATERIA;
       this.materia.cod_periodo = res[0].COD_PERIODO;

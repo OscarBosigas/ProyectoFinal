@@ -34,14 +34,12 @@ export class EstudianteInitComponent implements OnInit {
       this.Nombre = this.estudiante.nombre + ' ' + this.estudiante.apellido;
       this.login.getCalificacionesCurso('http://localhost:3000/nota/estudiante/' + res[0].DOC).subscribe(
         data => {
-        this.notas = data; for (let index = 0; index < this.notas.length; index++) {
-          this.Promedio += this.notas[index].valor;
-
-          console.log(this.Promedio);
-        }
-        this.Promedio = this.Promedio / this.notas.length;
-        console.log(this.Promedio);
-          });
+          this.notas = data; 
+          for (let index = 0; index < this.notas.length; index++) {
+            this.Promedio += this.notas[index].valor;
+          }
+          this.Promedio = this.Promedio / this.notas.length;
+        });
     });
   }
 
@@ -49,4 +47,8 @@ export class EstudianteInitComponent implements OnInit {
     this.router.navigate(['']);
   }
 
+  onCalificacion(cod: number) {
+    this.login.getMateria(cod);
+    this.router.navigate(['estadistica']);
+  }
 }

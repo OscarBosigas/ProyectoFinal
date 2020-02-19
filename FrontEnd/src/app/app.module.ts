@@ -21,6 +21,7 @@ import { EditMateriaComponent } from './components/edit-materia/edit-materia.com
 import { AgregarMateriaComponent } from './components/agregar-materia/agregar-materia.component';
 import { CalificarEstudianteComponent } from './components/calificar-estudiante/calificar-estudiante.component';
 import { EditarCalificacionComponent } from './components/editar-calificacion/editar-calificacion.component';
+import { EstadisticaComponent } from './components/estadistica/estadistica.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { EditarCalificacionComponent } from './components/editar-calificacion/ed
     EditMateriaComponent,
     AgregarMateriaComponent,
     CalificarEstudianteComponent,
-    EditarCalificacionComponent
+    EditarCalificacionComponent,
+    EstadisticaComponent
   ],
   imports: [
     BrowserModule,
