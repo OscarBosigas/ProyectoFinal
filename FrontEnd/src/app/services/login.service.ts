@@ -19,6 +19,15 @@ export class LoginService {
   desc: string;
   cod: string;
   doc1: string;
+  curso = 0;
+
+  getCurso(curso: number) {
+    this.curso = curso;
+  }
+
+  getCurso2() {
+    return this.curso;
+  }
 
   getEstudianteDoc(doc: string) {
     this.doc1 = doc;
@@ -104,6 +113,10 @@ export class LoginService {
     return this.http.get<Materia[]>(url);
   }
 
+  getMateriasCurso(url: string): Observable<Materia[]> {
+    return this.http.get<Materia[]>(url);
+  }
+
   getMateriaById(url: string): Observable<Materia> {
     return this.http.get<Materia>(url);
   }
@@ -143,4 +156,5 @@ export class LoginService {
   editCalificacion(url: string, nota: Nota) {
     return this.http.post(url, nota);
   }
+
 }

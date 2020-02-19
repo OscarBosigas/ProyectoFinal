@@ -5,4 +5,5 @@ export class Materia {
     cod_docente: string;
     nom_materia: string;
     num_horas: number;
+    VALOR: number;
 }

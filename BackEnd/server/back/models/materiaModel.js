@@ -23,8 +23,8 @@ Materia.getMateriasDocente = function (doc_docente, result) {
     })
 };
 
-Materia.getMateriasCurso = function (cod_curso, result) {
-    sql.query("SELECT * FROM MATERIA WHERE COD_CURSO = ?", cod_curso, (err, res) => {
+Materia.getMateriasCurso = function (doc, cod_curso, result) {
+    sql.query("SELECT NOM_MATERIA, NUM_HORAS, VALOR FROM MATERIA m, NOTA n WHERE n.cod_materia =m.COD_MATERIA AND n.DOC = ? AND COD_CURSO = ?", [doc, cod_curso], (err, res) => {
         if (err) {
             console.log("error:", err);
             result(null, err);
