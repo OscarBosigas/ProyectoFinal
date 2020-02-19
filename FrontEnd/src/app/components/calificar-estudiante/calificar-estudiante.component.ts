@@ -42,7 +42,7 @@ export class CalificarEstudianteComponent implements OnInit {
       this.NombreMateria = '' + this.materia.nom_materia + ' - ' + 'Periodo: ' + this.materia.cod_periodo;
     });
 
-    this.login.getEstructura('http://localhost:3000/materia/estructura/' + this.login.getMateria2()).
+    this.login.getEstructura('http://localhost:3000/estructura/' + this.login.getMateria2()).
     subscribe(data => this.estructuras = data
     );
   }

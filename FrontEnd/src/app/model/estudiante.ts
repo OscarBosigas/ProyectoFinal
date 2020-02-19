@@ -4,6 +4,6 @@ export class Estudiante {
     apellido: string;
     codigo: number;
     contrasena: string;
-    NOM_CURSO: string;
+    nom_curso: string;
     cod_curso: number;
 }

@@ -45,7 +45,7 @@ export class AdminMateriaComponent implements OnInit {
       this.materia.cod_periodo = res[0].COD_PERIODO;
       this.NombreMateria = '' + this.materia.nom_materia + ' - ' +  'Periodo: ' + this.materia.cod_periodo;
     });
-    this.login.getEstructura('http://localhost:3000/materia/estructura/' + this.idMateria).subscribe(data => this.estructuras = data);
+    this.login.getEstructura('http://localhost:3000/estructura/' + this.idMateria).subscribe(data => this.estructuras = data);
   }
 
   onCerrar() {

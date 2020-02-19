@@ -33,3 +33,12 @@ exports.remove = function (req, res) {
         res.json({ message: "Estructura eliminado" });
     });
 };
+
+
+exports.getEstructura = function (req, res) {
+    Estructura.getEstructura(req.params.cod_materia, function (err, estructura) {
+        if (err)
+            res.send(err);
+        res.json(estructura);
+    });
+};

@@ -25,11 +25,3 @@ exports.getMateria = function(req, res) {
         res.json(materia);
     });
 };
-
-exports.getEstructura = function (req, res) {
-    Materia.getEstructura(req.params.cod_materia, function (err, materia) {
-        if (err)
-            res.send(err);
-        res.json(materia);
-    });
-};

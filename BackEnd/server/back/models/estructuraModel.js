@@ -44,4 +44,18 @@ Estructura.remove = function (cod_materia, descripcion, result) {
         });
 };
 
+
+Estructura.getEstructura = function (cod_materia, result) {
+    sql.query("SELECT * FROM ESTRUCTURAM WHERE cod_materia = ?", cod_materia, (err, res) => {
+        if (err) {
+            console.log("error:", err);
+            result(null, err);
+        }
+        else {
+            result(null, res);
+        }
+    })
+};
+
+
 module.exports = Estructura;

@@ -8,5 +8,8 @@ module.exports = function (app) {
 
     app.route('/estructura/:cod_materia/:descripcion')
         .post(todoList.edit)
-        .delete(todoList.remove)
+        .delete(todoList.remove);
+    
+    app.route('/estructura/:cod_materia')
+        .get(todoList.getEstructura);
 }
