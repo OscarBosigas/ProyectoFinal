@@ -1,7 +1,5 @@
-'use strict';
+'user strict';
 var sql = require('../db');
-
-var Estudiante = require('./estudianteModel');
 
 var Admin = function(admin){
     this.usuario = admin.usuario;
@@ -42,4 +40,17 @@ Admin.login = function login(usuario, contrasena1, result) {
     });            
 
 };
+
+Admin.getEstudiantesPorMateria = function(COD_MATERIA, result) {
+    sql.query("SELECT nombre, apellido, codigo from ESTUDIANTE e, MATERIA m where m.COD_CURSO = e.COD_CURSO and m.COD_MATERIA = ?",
+     COD_MATERIA, (err, res) => {
+        if (err) {
+            console.log("error: ", err);
+            result(err, null);
+        }
+        else
+            result(null, res);
+    });
+};
+
 module.exports = Admin;

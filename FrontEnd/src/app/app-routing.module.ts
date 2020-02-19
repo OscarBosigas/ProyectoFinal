@@ -15,6 +15,8 @@ import { AdminMateriaComponent } from './components/admin-materia/admin-materia.
 import { CalificarComponent } from './components/calificar/calificar.component';
 import { EditMateriaComponent } from './components/edit-materia/edit-materia.component';
 import { AgregarMateriaComponent } from './components/agregar-materia/agregar-materia.component';
+import { CalificarEstudianteComponent } from './components/calificar-estudiante/calificar-estudiante.component';
+import { EditarCalificacionComponent } from './components/editar-calificacion/editar-calificacion.component';
 
 
 const routes: Routes = [
@@ -32,7 +34,9 @@ const routes: Routes = [
   { path: 'adminMateria', component: AdminMateriaComponent },
   { path: 'calificar', component: CalificarComponent },
   { path: 'editMateria', component: EditMateriaComponent },
-  { path: 'agregarMateria', component: AgregarMateriaComponent }
+  { path: 'agregarMateria', component: AgregarMateriaComponent },
+  { path: 'calificarEstudiante', component: CalificarEstudianteComponent },
+  { path: 'editarCal', component: EditarCalificacionComponent }
 
 ];
 

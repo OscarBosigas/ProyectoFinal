@@ -12,4 +12,7 @@ module.exports = function(app){
         .post(todoList.edit)
         .delete(todoList.remove);
 
+    app.route('/estudiante/codigo/:codigo')
+        .get(todoList.estudianteByCod)
+
 };

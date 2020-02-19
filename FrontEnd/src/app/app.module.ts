@@ -19,6 +19,8 @@ import { AdminMateriaComponent } from './components/admin-materia/admin-materia.
 import { CalificarComponent } from './components/calificar/calificar.component';
 import { EditMateriaComponent } from './components/edit-materia/edit-materia.component';
 import { AgregarMateriaComponent } from './components/agregar-materia/agregar-materia.component';
+import { CalificarEstudianteComponent } from './components/calificar-estudiante/calificar-estudiante.component';
+import { EditarCalificacionComponent } from './components/editar-calificacion/editar-calificacion.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +39,9 @@ import { AgregarMateriaComponent } from './components/agregar-materia/agregar-ma
     AdminMateriaComponent,
     CalificarComponent,
     EditMateriaComponent,
-    AgregarMateriaComponent
+    AgregarMateriaComponent,
+    CalificarEstudianteComponent,
+    EditarCalificacionComponent
   ],
   imports: [
     BrowserModule,

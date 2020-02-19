@@ -45,6 +45,19 @@ Estudiante.getAEstudiante = function getAEstudiante(doc, result) {
     })
 };
 
+
+Estudiante.getAEstudianteByCod = function getAEstudiante(cod, result) {
+    sql.query("SELECT * FROM ESTUDIANTE WHERE CODIGO = ? ", cod, (err, res) => {
+        if (err) {
+            console.log("error: ", err);
+            result(err, null);
+        }
+        else
+            result(null, res);
+    })
+};
+
+
 Estudiante.editEstudiante = function editEstudiante(doc, estudiante, result) {
     sql.query("UPDATE ESTUDIANTE SET nombre = ?, apellido = ?, codigo = ?, contrasena = ? where doc = ?" ,
     [estudiante.nombre, estudiante.apellido, estudiante.codigo, estudiante.contrasena, doc],

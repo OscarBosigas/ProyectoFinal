@@ -9,3 +9,11 @@ exports.login = function (req, res) {
         res.send(admin);
     });
 };
+
+exports.getEstudiantesPorMateria = function(req, res) {
+    Admin.getEstudiantesPorMateria(req.params.cod_materia, function(err, estudiante) {
+        if (err)
+            res.send(err);
+        res.send(estudiante);
+    });
+};

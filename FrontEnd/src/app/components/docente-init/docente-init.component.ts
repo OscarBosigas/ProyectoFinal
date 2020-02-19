@@ -44,7 +44,8 @@ export class DocenteInitComponent implements OnInit {
     this.router.navigate(['adminMateria']);
   }
 
-  onCalificar() {
+  onCalificar(mat: number) {
+    this.login.getMateria(mat);
     this.router.navigate(['calificar']);
   }
 

@@ -21,33 +21,33 @@
             <div class="table-title">
                 <div class="row">
                     <div class="col-sm-6">
-                        <h2><b>MATERIAS</b></h2>
+                        <h3><b>{{NombreMateria}}</b></h3>
+                        <h5>Nota final:  {{final}}</h5>
+                        <a (click)="onLimpiar()" class="btn btn-dark">
+                            <span style="color: white;" >Limpiar</span></a>
                     </div>
                 </div>
             </div>
             <table id="dtBasicExample" class="table table-striped table-hover">
                 <thead>
                     <tr>
-                        <th>Codigo</th>
-                        <th>Nombre</th>
-                        <th>Curso</th>
-                        <th>Horas</th>
-                        <th></th>
-                        <th></th>
+                        <th>Descripcion</th>
+                        <th>Valor</th>
+                        <th>Nota</th>
+                        <th><a (click)="onCalificar()" class="btn btn-success">
+                        <span>Calificar</span></a></th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let data of materias">
-                        <td>{{data.COD_MATERIA}}</td>
-                        <td>{{data.NOM_MATERIA}}</td>
-                        <td>{{data.COD_CURSO}}</td>
-                        <td>{{data.NUM_HORAS}}</td>
+                    <tr *ngFor="let data of estructuras">
+                        <td>{{data.descripcion}}</td>
+                        <td>{{data.value}}</td>
                         <td>
-                            <button (click)="onAdministrar(data.COD_MATERIA)" text-color="white" class="btn btn-success btn-sm btn-center">Administrar</button>
+                            <input type="number" [(ngModel)]=valor name="valor">                           
                         </td>
-                        <td>
-                                <button (click)="onCalificar(data.COD_MATERIA)" class="btn btn-danger btn-sm btn-center" >Calificar</button>                           
-                        </td>
+                        <td><button (click)="onGuardar(data.value)" class="btn btn-danger">
+                            <span>Guardar Nota</span></button>
+                        </td>              
                     </tr>
                 </tbody>
             </table>

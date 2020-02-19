@@ -43,3 +43,6 @@ materiaRoutes(app);
 
 var estructuraRoutes = require('./routes/estructuraRoutes');
 estructuraRoutes(app);
+
+var notaRoutes = require('./routes/notaRoutes');
+notaRoutes(app);

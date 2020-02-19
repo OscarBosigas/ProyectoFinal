@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { Estudiante } from '../model/estudiante';
 import { Materia } from '../model/materia';
 import { Estructura } from '../model/estructura';
+import { Nota } from '../model/nota';
 
 @Injectable({
   providedIn: 'root'
@@ -16,6 +17,24 @@ export class LoginService {
   usuario: string;
   materia: number;
   desc: string;
+  cod: string;
+  doc1: string;
+
+  getEstudianteDoc(doc: string) {
+    this.doc1 = doc;
+  }
+
+  getEstudianteDoc2() {
+    return this.doc1;
+  }
+
+  getEstudiante(cod: string) {
+    this.cod = cod;
+  }
+
+  getEstudiante2() {
+    return this.cod;
+  }
 
   getMateria(mat: number) {
     this.materia = mat;
@@ -105,5 +124,23 @@ export class LoginService {
     return this.http.delete<Estructura>(url);
   }
 
+  getEstudiantesPorMateria(url: string): Observable<Estudiante[]> {
+    return this.http.get<Estudiante[]>(url);
+  }
 
+  getEstudianteByCod(url: string): Observable<Estudiante> {
+    return this.http.get<Estudiante>(url);
+  }
+
+  calificar(url: string, nota: Nota): Observable<Nota> {
+    return this.http.post<Nota>(url, nota);
+  }
+
+  getNota(url: string): Observable<Nota> {
+    return this.http.get<Nota>(url);
+  }
+
+  editCalificacion(url: string, nota: Nota) {
+    return this.http.post(url, nota);
+  }
 }

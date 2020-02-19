@@ -36,6 +36,14 @@ exports.estudiante = function(req, res) {
     });
 };
 
+exports.estudianteByCod = function (req, res) {
+    Estudiante.getAEstudianteByCod(req.params.codigo, function (err, estudiante) {
+        if (err)
+            res.send(err);
+        res.send(estudiante);
+    });
+};
+
 exports.edit = function(req, res) {
     Estudiante.editEstudiante(req.params.doc, new Estudiante(req.body), function(err, estudiante) {
         if(err)

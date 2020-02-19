@@ -4,5 +4,6 @@ export class Estructura {
     cod_materia: number;
     descripcion: string;
     value: number;
+    valorFinal: number;
 
 }
