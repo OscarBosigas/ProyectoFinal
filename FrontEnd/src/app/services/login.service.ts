@@ -198,4 +198,16 @@ export class LoginService {
   cambiarContrasenaEstudiante(url: string, estudiante: Estudiante): Observable<Estudiante> {
     return this.http.post<Estudiante>(url, estudiante);
   }
+
+  addMateria(url: string, materia: Materia): Observable<Materia> {
+    return this.http.post<Materia>(url, materia);
+  }
+
+  deleteMateria(url: string)  {
+    return this.http.delete(url);
+  }
+
+  getMaterias(url: string): Observable<Materia[]> {
+    return this.http.get<Materia[]>(url);
+  }
 }

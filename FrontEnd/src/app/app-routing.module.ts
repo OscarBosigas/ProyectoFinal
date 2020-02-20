@@ -21,6 +21,8 @@ import { EstadisticaComponent } from './components/estadistica/estadistica.compo
 import { OlvidarComponent } from './components/olvidar/olvidar.component';
 import { OlvidarEstudianteComponent } from './components/olvidar-estudiante/olvidar-estudiante.component';
 import { OlvidarDocenteComponent } from './components/olvidar-docente/olvidar-docente.component';
+import { AgregarMateriaAdminComponent } from './components/agregar-materia-admin/agregar-materia-admin.component';
+import { BorrarMateriaComponent } from './components/borrar-materia/borrar-materia.component';
 
 
 const routes: Routes = [
@@ -44,7 +46,9 @@ const routes: Routes = [
   { path: 'estadistica', component: EstadisticaComponent },
   { path: 'olvidar', component: OlvidarComponent },
   { path: 'olvidarEstudiante', component: OlvidarEstudianteComponent },
-  { path: 'olvidarDocente', component: OlvidarDocenteComponent }
+  { path: 'olvidarDocente', component: OlvidarDocenteComponent },
+  { path: 'materia', component: AgregarMateriaAdminComponent },
+  { path: 'borrarMateria', component: BorrarMateriaComponent }
 
 ];
 

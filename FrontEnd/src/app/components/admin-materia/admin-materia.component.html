@@ -34,7 +34,7 @@
                         <h2><b>PORCENTAJES</b></h2>
                     </div>
                     <div class="col-sm-6">
-                        <a (click)="onAgregar()" class="btn btn-success"><i class="material-icons">&#xE147;</i>
+                        <a (click)="onAgregar()" class="btn btn-success float-right"><i class="material-icons">&#xE147;</i>
                             <span>Agregar</span></a>
                     </div>
                 </div>
@@ -52,7 +52,7 @@
                     <tr *ngFor="let data of estructuras">
                         <td>{{data.descripcion}}</td>
                         <td>{{data.value}}</td>
-                        <a (click)="onEditar(data.descripcion)" class="btn btn-secondary"><i class="material-icons"> border_color
+                        <a (click)="onEditar(data.descripcion)" class="btn btn-secondary m-2"><i class="material-icons"> border_color
                             </i> <span>Editar</span> </a>
                         <a (click)="onEliminar(data.cod_materia, data.descripcion)" class="btn btn-danger"><i class="material-icons">&#xE15C;</i>
                             <span>Eliminar</span></a>

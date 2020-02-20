@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { LoginService } from '../../services/login.service';
 import { Docente } from '../../model/docente';
 import { Estudiante } from '../../model/estudiante';
+import { Materia } from '../../model/materia';
 
 @Component({
   selector: 'app-admin',
@@ -15,10 +16,12 @@ export class AdminComponent implements OnInit {
 
   docentes: Docente[];
   estudiantes: Estudiante[];
+  materias: Materia[];
 
   ngOnInit() {
     this.login.getDocentes('http://localhost:3000/docente').subscribe(data => this.docentes = data);
     this.login.getEstudiantes('http://localhost:3000/estudiante').subscribe(data => this.estudiantes = data);
+    this.login.getMaterias('http://localhost:3000/materia').subscribe(data => this.materias = data);
   }
 
   onAgregarDocente() {
@@ -33,6 +36,10 @@ export class AdminComponent implements OnInit {
     this.router.navigate(['eliminarDocente']);
   }
 
+  onAgregarMateria() {
+    this.router.navigate(['materia']);
+  }
+
   onAgregarEstudiante() {
     this.router.navigate(['agregarEstudiante']);
   }
@@ -43,6 +50,10 @@ export class AdminComponent implements OnInit {
 
   onEliminarEstudiante() {
     this.router.navigate(['eliminarEstudiante']);
+  }
+
+  onBorrarMateria() {
+    this.router.navigate(['borrarMateria']);
   }
 
   onCerrar() {

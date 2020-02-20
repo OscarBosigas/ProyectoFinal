@@ -6,7 +6,7 @@ var Materia = function (materia) {
     this.cod_materia = materia.cod_materia;
     this.cod_periodo = materia.cod_periodo;
     this.cod_curso = materia.cod_curso;
-    this.cod_docente = materia.cod_docente;
+    this.doc_docente = materia.doc_docente;
     this.nom_materia = materia.nom_materia;
     this.num_horas = materia.num_horas;
 }
@@ -45,6 +45,43 @@ Materia.getMateria = function(cod_materia, result) {
             result(null, res);
         }
     })
-}; 
+};
+
+Materia.create = function(materia, result) {    
+    sql.query("INSERT INTO MATERIA SET ?", materia, (err, res) => {
+        if (err) {
+            console.log("error:", err);
+            result(null, err);
+        }
+        else {
+            result(null, res);
+        }
+    })
+};
+
+Materia.remove = function(cod_materia, result) {
+    sql.query("DELETE FROM MATERIA WHERE cod_materia = ?",
+        cod_materia, function (err, res) {
+            if (err) {
+                console.log("error: ", err);
+                result(null, err);
+            } else {
+                result(null, res);
+            }
+        });
+};
+
+Materia.getMaterias = function(result) {
+    sql.query("SELECT * from MATERIA", (err, res) => {
+        if (err) {
+            console.log("error:", err);
+            result(null, err);
+        }
+        else {
+            result(null, res);
+        }
+    })
+};
+
 
 module.exports = Materia;

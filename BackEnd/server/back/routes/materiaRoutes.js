@@ -12,4 +12,11 @@ module.exports = function (app) {
     app.route('/materia/materia/:cod_materia')
         .get(todoList.getMateria);
 
+    app.route('/materia')
+        .get(todoList.getMaterias)
+        .post(todoList.create);
+
+    app.route('/materia/:cod_materia')
+        .delete(todoList.remove);
+
 }

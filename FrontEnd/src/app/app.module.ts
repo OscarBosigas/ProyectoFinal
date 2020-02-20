@@ -26,6 +26,8 @@ import { ChartsModule } from  'ng2-charts';
 import { OlvidarComponent } from './components/olvidar/olvidar.component';
 import { OlvidarDocenteComponent } from './components/olvidar-docente/olvidar-docente.component';
 import { OlvidarEstudianteComponent } from './components/olvidar-estudiante/olvidar-estudiante.component';
+import { AgregarMateriaAdminComponent } from './components/agregar-materia-admin/agregar-materia-admin.component';
+import { BorrarMateriaComponent } from './components/borrar-materia/borrar-materia.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +52,9 @@ import { OlvidarEstudianteComponent } from './components/olvidar-estudiante/olvi
     EstadisticaComponent,
     OlvidarComponent,
     OlvidarDocenteComponent,
-    OlvidarEstudianteComponent
+    OlvidarEstudianteComponent,
+    AgregarMateriaAdminComponent,
+    BorrarMateriaComponent
   ],
   imports: [
     BrowserModule,
