@@ -12,13 +12,18 @@
 </head>
 
 <body>
-    <div class="bg-info clearfix p-3 mb-2 bg-dark text-white">
+    <div class="bg-info clearfix bg-dark text-white">
         <div class="row">
             <div class="col">
-                <h4 align="center" background="##5cb85c">{{ Nombre }}</h4>
+                <img width="20%" height="100%" src="assets/escudo.jpg">
             </div>
             <div class="col">
-                <a class="btn btn-warning float-right" (click)="onCerrar()">Cerrar</a>
+                <h2>     </h2>
+                <h2 align="center" background="##5cb85c">{{ Nombre }}</h2>
+            </div>
+            <div class="col">
+                <input class="btn" type="submit" disabled="true" value=" ">
+                <a class="btn btn-warning float-right"  (click)="onCerrar()">Cerrar</a>
             </div>
         </div>
     </div>
@@ -68,11 +73,18 @@
                             </tbody>
                         </table>
                     </div>
-                    <div class="col" style="width:2000px; height:2000px">
-                        <div >
-                            <canvas baseChart [datasets]="radarChartData" [labels]="radarChartLabels"
-                                [chartType]="radarChartType">
-                            </canvas>
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="text-center">Notas</h3>
+                        </div>
+                        <div class="card_body">
+                            <div class="col" style="width:2000px; height:2000px">
+                                <div>
+                                    <canvas baseChart [datasets]="radarChartData" [labels]="radarChartLabels"
+                                        [chartType]="radarChartType">
+                                    </canvas>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -19,8 +19,10 @@
 <body>
     <div class="bg-info clearfix p-3 mb-2 bg-dark text-white">
         <h4 align="center" background="##5cb85c">CALIFICACION</h4>
-        <div class="container">
             <div class="row">
+                <div class="col">
+                    <img width="20%" height="100%" src="assets/escudo.jpg">
+                </div>
                 <div class="col">
                     {{NomMateria}}
                 </div>
@@ -32,14 +34,20 @@
                 </div>
             </div>
         </div>
-    </div>
-        <div>
-            <div style="display: block">
-                <canvas baseChart [datasets]="barChartData" [labels]="barChartLabels" [options]="barChartOptions"
-                    [legend]="barChartLegend" [chartType]="barChartType">
-                </canvas>
+    <div class="card">
+        <div class="card-header">
+            <h3 class="text-center">Promedio Curso</h3>
+        </div>
+        <div class="card_body">
+            <div>
+                <div style="display: block">
+                    <canvas baseChart [datasets]="barChartData" [labels]="barChartLabels" [options]="barChartOptions"
+                        [legend]="barChartLegend" [chartType]="barChartType">
+                    </canvas>
+                </div>
             </div>
         </div>
+    </div>
 </body>
 
 </html>

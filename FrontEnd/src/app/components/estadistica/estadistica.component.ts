@@ -60,7 +60,7 @@ export class EstadisticaComponent implements OnInit {
             this.barChartData = [
                 { data: [this.Nota], label: 'Alumno' },
                 { data: [this.Promedio], label: 'Promedio Curso' },
-                { data: [0]}
+                { data: [0], label: ''}
               ];
           });
         });

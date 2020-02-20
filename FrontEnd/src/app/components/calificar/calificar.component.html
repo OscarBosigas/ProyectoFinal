@@ -15,6 +15,9 @@
     <div class="bg-info clearfix p-3 mb-2 bg-dark text-white">
         <div class="row">
             <div class="col">
+                <img width="20%" height="100%" src="assets/escudo.jpg">
+            </div>
+            <div class="col">
                 <h4 align="center" background="##5cb85c">CALIFICACION</h4>
                 <h5>{{Nombre}}</h5>
             </div>
@@ -46,13 +49,28 @@
                         <td>{{data.codigo}}</td>
                         <td>{{data.nombre}}</td>
                         <td>{{data.apellido}}</td>
-                        <td><a (click)="onCalificar(data.codigo)" class="btn btn-secondary"><span>Calificar</span> </a></td>
+                        <td><a (click)="onCalificar(data.codigo)" class="btn btn-secondary"><span>Calificar</span> </a>
+                        </td>
                     </tr>
                 </tbody>
             </table>
         </div>
     </div>
+    <div>
+        <div class="card">
+            <div class="card-header">
+                <h3 class="text-center">Notas Alumnos</h3>
+            </div>
+            <div class="card_body">
+                <div style="display: block">
+                    <canvas baseChart [datasets]="barChartData" [labels]="barChartLabels" [options]="barChartOptions"
+                        [legend]="barChartLegend" [chartType]="barChartType">
+                    </canvas>
+                </div>
+            </div>
+        </div>
 
+    </div>
 </body>
 
 </html>

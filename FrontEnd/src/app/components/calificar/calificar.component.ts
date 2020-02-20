@@ -4,6 +4,8 @@ import { Router } from '@angular/router';
 import { Materia } from '../../model/materia';
 import { Estudiante } from '../../model/estudiante';
 import { Docente } from '../../model/docente';
+import { Label } from 'ng2-charts';
+import { ChartDataSets, ChartType, RadialChartOptions, ChartOptions } from 'chart.js';
 import { Nota } from '../../model/nota';
 
 @Component({
@@ -24,6 +26,26 @@ export class CalificarComponent implements OnInit {
   Nombre = '';
   doc2: string;
 
+
+  public barChartOptions: ChartOptions = {
+    responsive: true,
+    // We use these empty structures as placeholders for dynamic theming.
+    scales: { xAxes: [{}], yAxes: [{}] },
+    plugins: {
+      datalabels: {
+        anchor: 'end',
+        align: 'end',
+      }
+    }
+  };
+  public barChartLabels: Label[];
+  public barChartType: ChartType = 'bar';
+  public barChartLegend = true;
+
+  public barChartData: ChartDataSets[] = [{data: [2, 2], label: 'Notas'}];
+
+
+
   ngOnInit() {
     this.docDocente = this.login.getUsuario2();
     this.login.getADocente('http://localhost:3000/docente/' + this.docDocente).subscribe((res: any) => {
@@ -32,14 +54,25 @@ export class CalificarComponent implements OnInit {
       this.docente.apellido_doc = res[0].APELLIDO_DOC;
       this.Nombre = this.docente.nom_docente + ' ' + this.docente.apellido_doc;
     });
-    this.login.getMateriaById('http://localhost:3000/materia/' + this.login.getMateria2()).subscribe((res: any) => {
+    this.login.getMateriaById('http://localhost:3000/materia/materia/' + this.login.getMateria2()).subscribe((res: any) => {
       this.materia.cod_materia = res[0].COD_MATERIA;
       this.materia.nom_materia = res[0].NOM_MATERIA;
       this.materia.cod_periodo = res[0].COD_PERIODO;
       this.NomMateria = ' - ' + this.materia.nom_materia + ' - ' + 'Periodo: ' + this.materia.cod_periodo;
     });
-    this.login.getEstudiantesPorMateria('http://localhost:3000/materia/estudiantes/' + this.login.getMateria2() ).
-    subscribe(data => this.estudiantes = data);
+    this.login.getEstudiantesPorMateria('http://localhost:3000/materia/estudiantes/' + this.login.getMateria2()).
+    subscribe(data1 => {
+      this.estudiantes = data1;
+      const names = data1.map(data1=> data1.nombre);
+      console.log(names);
+      this.barChartLabels = names;
+    });
+    this.login.getNotasMateria('http://localhost:3000/nota/materia/' + this.login.getMateria2()).subscribe( data1 => {
+      const values = data1.map(data1 => data1.valor);
+      console.log(values);
+      this.barChartData = [
+        { data: [0], label: ''}, { data: values, label: 'Notas'}];
+    });
   }
 
   onCerrar() {
