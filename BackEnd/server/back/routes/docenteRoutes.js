@@ -11,5 +11,8 @@ module.exports = function (app) {
         .get(todoList.docente)
         .post(todoList.edit)
         .delete(todoList.remove);
+    
+    app.route('/cambiarContrasena/docente/:doc/:nombre/:apellido')
+        .post(todoList.cambiarContrasena);
 
 };

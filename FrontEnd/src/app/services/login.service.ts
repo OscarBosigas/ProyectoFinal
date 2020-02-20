@@ -191,16 +191,11 @@ export class LoginService {
     return this.http.get<Nota[]>(url);
   }
 
-  promedioNotas(cod: number) {
-    let Promedio = 0;
-    let values: Nota[];
-    this.getNotasMateria('http://localhost:3000/nota/materia/' + cod).subscribe(
-      data1 => {
-        values = data1.map(data1 => data1);
-      });
+  cambiarContrasenaDocente(url: string, docente: Docente): Observable<Docente> {
+    return this.http.post<Docente>(url, docente);
+  }
 
-
-    console.log('prom ' + Promedio);
-    return Promedio;
+  cambiarContrasenaEstudiante(url: string, estudiante: Estudiante): Observable<Estudiante> {
+    return this.http.post<Estudiante>(url, estudiante);
   }
 }

@@ -1,0 +1,50 @@
+<<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Editar Docente</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+</head>
+
+<body>
+<div id="editDocenteModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form (submit)="onEdit()">
+                <div class="modal-header">
+                    <h4 class="modal-title">Docente</h4>
+                    <button (click)="onCancel()" type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label>Documento</label>
+                        <input [(ngModel)]="docente.doc_docente" name="doc_docente" type="number" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Nombre</label>
+                        <input [(ngModel)]="docente.nom_docente" name="nom_docente" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Apellido</label>
+                        <input [(ngModel)]="docente.apellido_doc" name="apellido_doc" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Contrasena</label>
+                        <input [(ngModel)]="docente.contrasena_doc" name="contrasena_doc" type="password" class="form-control" required>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <input (click)="onCancel()" type="button" class="btn btn-default" data-dismiss="modal" value="Cancelar">
+                    <input type="submit" class="btn btn-info" value="Cambiar Contraseña">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

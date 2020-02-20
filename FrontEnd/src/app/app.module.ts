@@ -23,6 +23,9 @@ import { CalificarEstudianteComponent } from './components/calificar-estudiante/
 import { EditarCalificacionComponent } from './components/editar-calificacion/editar-calificacion.component';
 import { EstadisticaComponent } from './components/estadistica/estadistica.component';
 import { ChartsModule } from  'ng2-charts';
+import { OlvidarComponent } from './components/olvidar/olvidar.component';
+import { OlvidarDocenteComponent } from './components/olvidar-docente/olvidar-docente.component';
+import { OlvidarEstudianteComponent } from './components/olvidar-estudiante/olvidar-estudiante.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +47,10 @@ import { ChartsModule } from  'ng2-charts';
     AgregarMateriaComponent,
     CalificarEstudianteComponent,
     EditarCalificacionComponent,
-    EstadisticaComponent
+    EstadisticaComponent,
+    OlvidarComponent,
+    OlvidarDocenteComponent,
+    OlvidarEstudianteComponent
   ],
   imports: [
     BrowserModule,

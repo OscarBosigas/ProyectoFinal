@@ -47,4 +47,8 @@ export class InitComponent implements OnInit {
     this.router.navigate(['']);
   }
 
+  onOlvidar() {
+    this.router.navigate(['olvidar']);
+  }
+
 }

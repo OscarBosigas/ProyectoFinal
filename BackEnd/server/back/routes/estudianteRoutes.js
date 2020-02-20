@@ -13,6 +13,9 @@ module.exports = function(app){
         .delete(todoList.remove);
 
     app.route('/estudiante/codigo/:codigo')
-        .get(todoList.estudianteByCod)
+        .get(todoList.estudianteByCod);
+
+    app.route('/cambiarContrasena/estudiante/:doc/:nombre/:apellido')
+        .post(todoList.cambiarContrasena);
 
 };

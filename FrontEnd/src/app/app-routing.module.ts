@@ -18,6 +18,9 @@ import { AgregarMateriaComponent } from './components/agregar-materia/agregar-ma
 import { CalificarEstudianteComponent } from './components/calificar-estudiante/calificar-estudiante.component';
 import { EditarCalificacionComponent } from './components/editar-calificacion/editar-calificacion.component';
 import { EstadisticaComponent } from './components/estadistica/estadistica.component';
+import { OlvidarComponent } from './components/olvidar/olvidar.component';
+import { OlvidarEstudianteComponent } from './components/olvidar-estudiante/olvidar-estudiante.component';
+import { OlvidarDocenteComponent } from './components/olvidar-docente/olvidar-docente.component';
 
 
 const routes: Routes = [
@@ -38,7 +41,10 @@ const routes: Routes = [
   { path: 'agregarMateria', component: AgregarMateriaComponent },
   { path: 'calificarEstudiante', component: CalificarEstudianteComponent },
   { path: 'editarCal', component: EditarCalificacionComponent },
-  { path: 'estadistica', component: EstadisticaComponent }
+  { path: 'estadistica', component: EstadisticaComponent },
+  { path: 'olvidar', component: OlvidarComponent },
+  { path: 'olvidarEstudiante', component: OlvidarEstudianteComponent },
+  { path: 'olvidarDocente', component: OlvidarDocenteComponent }
 
 ];
 

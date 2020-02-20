@@ -69,4 +69,15 @@ Docente.remove = function (doc_docente, result) {
         });
 };
 
+Docente.cambiarContrasena = function (doc, name, lastName, docente, result) {
+    sql.query("UPDATE DOCENTE SET contrasena_doc = ? WHERE doc_docente = ? and nom_docente = ? and apellido_doc = ?", [docente.contrasena_doc, doc, name, lastName], (err, res) => {
+        if (err) {
+            console.log("error: ", err);
+            result(err, null);
+        }
+        else
+            result(null, res);
+    });
+};
+
 module.exports = Docente;

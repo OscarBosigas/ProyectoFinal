@@ -51,3 +51,11 @@ exports.remove = function (req, res) {
         res.json(docente);
     });
 };
+
+exports.cambiarContrasena = function (req, res) {
+    Docente.cambiarContrasena(req.params.doc, req.params.nombre, req.params.apellido, new Docente(req.body), function (err, admin) {
+        if (err)
+            res.send(err);
+        res.send(admin);
+    });
+};

@@ -59,3 +59,11 @@ exports.remove = function(req, res) {
         res.json({ message: "Estudiante eliminado"});
     });
 };
+
+exports.cambiarContrasena = function (req, res) {
+    Estudiante.cambiarContrasena(req.params.doc, req.params.nombre, req.params.apellido, new Estudiante(req.body), function (err, admin) {
+        if (err)
+            res.send(err);
+        res.send(admin);
+    });
+};

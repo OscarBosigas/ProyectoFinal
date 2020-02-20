@@ -83,5 +83,16 @@ Estudiante.remove = function(doc, result) {
     });
 };
 
+Estudiante.cambiarContrasena = function (doc, name, lastName, estudiante, result) {
+    sql.query("UPDATE ESTUDIANTE SET contrasena = ? WHERE doc = ? and NOMBRE = ? and APELLIDO = ?", [estudiante.contrasena, doc, name, lastName], (err, res) => {
+        if (err) {
+            console.log("error: ", err);
+            result(err, null);
+        }
+        else
+            result(null, res);
+    });
+};
+
 
 module.exports = Estudiante;
