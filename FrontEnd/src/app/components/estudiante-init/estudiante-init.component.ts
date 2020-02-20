@@ -4,6 +4,8 @@ import { Router } from '@angular/router';
 import { Materia } from '../../model/materia';
 import { Estudiante } from '../../model/estudiante';
 import { Nota } from '../../model/nota';
+import { Label } from 'ng2-charts';
+import { ChartDataSets, ChartType, RadialChartOptions  } from 'chart.js';
 
 @Component({
   selector: 'app-estudiante-init',
@@ -22,7 +24,14 @@ export class EstudianteInitComponent implements OnInit {
 
   Nombre = '';
   nombreMateria: string;
-  Promedio: number = 0;
+  Promedio = 0;
+
+  public radarChartOptions: RadialChartOptions = {
+    responsive: true,
+  };
+  public radarChartLabels: Label[];
+  public radarChartData: ChartDataSets[] = [ { data: [0, 0, 0, 0, 0, 0], label: 'Notas' }];
+  public radarChartType: ChartType = 'radar';
 
   ngOnInit() {
       this.login.getAEstudiante('http://localhost:3000/estudiante/' + this.login.getUsuario2()).subscribe((res: any) => {
@@ -30,16 +39,23 @@ export class EstudianteInitComponent implements OnInit {
       this.estudiante.nombre = res[0].NOMBRE;
       this.estudiante.apellido = res[0].APELLIDO;
       this.login.getMateriasCurso('http://localhost:3000/materia/' + res[0].COD_CURSO).subscribe(
-        data =>  this.materias = data);
+        data => {
+           this.materias = data;
+        });
       this.Nombre = this.estudiante.nombre + ' ' + this.estudiante.apellido;
       this.login.getCalificacionesCurso('http://localhost:3000/nota/estudiante/' + res[0].DOC).subscribe(
-        data => {
-          this.notas = data; 
+        data1 => {
+          this.notas = data1;
           for (let index = 0; index < this.notas.length; index++) {
             this.Promedio += this.notas[index].valor;
           }
           this.Promedio = this.Promedio / this.notas.length;
-        });
+
+          const names = data1.map(data1 => data1.nom_materia);
+          this.radarChartLabels = names;
+          const values: number[] =  data1.map(data1 => data1.valor);
+          this.radarChartData = [ { data: values, label: 'Notas' }, { data: [3, 3, 3, 3, 3, 3], label: 'Minimos' }];
+          });
     });
   }
 
@@ -51,4 +67,5 @@ export class EstudianteInitComponent implements OnInit {
     this.login.getMateria(cod);
     this.router.navigate(['estadistica']);
   }
+
 }

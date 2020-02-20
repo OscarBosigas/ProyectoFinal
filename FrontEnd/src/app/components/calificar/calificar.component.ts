@@ -49,7 +49,7 @@ export class CalificarComponent implements OnInit {
   onCalificar(doc: string) {
     let x: any;
     this.login.getEstudiante(doc);
-    this.login.getNota('http://localhost:3000/nota/' +
+    this.login.getNota('http://localhost:3000/nota/codigo/' +
         this.login.getMateria2() + '/' + doc).subscribe(res => {
           x = res[0];
           if (x !== undefined) {

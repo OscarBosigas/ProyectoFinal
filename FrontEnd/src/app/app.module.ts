@@ -22,6 +22,7 @@ import { AgregarMateriaComponent } from './components/agregar-materia/agregar-ma
 import { CalificarEstudianteComponent } from './components/calificar-estudiante/calificar-estudiante.component';
 import { EditarCalificacionComponent } from './components/editar-calificacion/editar-calificacion.component';
 import { EstadisticaComponent } from './components/estadistica/estadistica.component';
+import { ChartsModule } from  'ng2-charts';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { EstadisticaComponent } from './components/estadistica/estadistica.compo
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -40,4 +40,12 @@ exports.getNotasCurso = function(req, res) {
             res.send(err);
         res.send(nota);
     });
-}
+};
+
+exports.getNotasMateria = function (req, res) {
+    Nota.getNotasMateria(req.params.cod_materia, function (err, nota) {
+        if (err)
+            res.send(err);
+        res.send(nota);
+    });
+};

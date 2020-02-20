@@ -21,6 +21,15 @@ export class LoginService {
   doc1: string;
   curso = 0;
   codAlumno = 0;
+  nota = 0;
+
+  getNotaG(nota: number) {
+    this.nota = nota;
+  }
+
+  getNotaG2() {
+    return this.nota;
+  }
 
   getAlumnoCod(cod: number) {
     this.codAlumno = cod;
@@ -178,4 +187,20 @@ export class LoginService {
     return this.http.get<Materia>(url);
   }
 
+  getNotasMateria(url: string): Observable<Nota[]> {
+    return this.http.get<Nota[]>(url);
+  }
+
+  promedioNotas(cod: number) {
+    let Promedio = 0;
+    let values: Nota[];
+    this.getNotasMateria('http://localhost:3000/nota/materia/' + cod).subscribe(
+      data1 => {
+        values = data1.map(data1 => data1);
+      });
+
+
+    console.log('prom ' + Promedio);
+    return Promedio;
+  }
 }

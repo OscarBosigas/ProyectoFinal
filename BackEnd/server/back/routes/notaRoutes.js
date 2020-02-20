@@ -14,4 +14,7 @@ module.exports = function (app) {
 
     app.route('/nota/:cod_materia/:doc')
         .post(todoList.edit);
+
+    app.route('/nota/materia/:cod_materia')
+        .get(todoList.getNotasMateria);
 };

@@ -43,7 +43,7 @@ Nota.getNota = function getNota(cod_materia, cod,  result) {
 };
 
 Nota.getNotasCurso = function(doc, result) {
-    sql.query("SELECT valor FROM NOTA n, ESTUDIANTE e WHERE n.doc = e.doc and e.doc = ?", doc, (err, res) => {
+    sql.query("SELECT valor, nom_materia FROM NOTA n, MATERIA m, ESTUDIANTE e WHERE m.cod_materia =n.cod_materia  AND n.doc = e.doc and e.doc = ?", doc, (err, res) => {
             if (err) {
                 console.log("error: ", err);
                 result(err, null);
@@ -51,6 +51,18 @@ Nota.getNotasCurso = function(doc, result) {
             else
                 result(null, res);
         });
-}
+;}
+
+Nota.getNotasMateria = function(cod_materia, result) { 
+    sql.query("SELECT valor FROM NOTA n, MATERIA m WHERE n.cod_materia = m.cod_materia and m.cod_materia = ?", cod_materia, (err, res) => {
+        if (err) {
+            console.log("error: ", err);
+            result(err, null);
+        }
+        else
+            result(null, res);
+    });
+};
+
 
 module.exports = Nota;
