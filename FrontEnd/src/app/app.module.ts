@@ -28,6 +28,8 @@ import { OlvidarDocenteComponent } from './components/olvidar-docente/olvidar-do
 import { OlvidarEstudianteComponent } from './components/olvidar-estudiante/olvidar-estudiante.component';
 import { AgregarMateriaAdminComponent } from './components/agregar-materia-admin/agregar-materia-admin.component';
 import { BorrarMateriaComponent } from './components/borrar-materia/borrar-materia.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -61,7 +63,8 @@ import { BorrarMateriaComponent } from './components/borrar-materia/borrar-mater
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ChartsModule
+    ChartsModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [],
   bootstrap: [AppComponent]
